@@ -26,6 +26,16 @@ public partial class CollectionViewWithWorkaround : ContentPage
             span = MaxSpan;
 
         if (_itemsLayout.Span != span)
-            _itemsLayout.Span = span;
+            Test(span);
+    }
+
+    private async void Test(int span)
+    {
+#if ANDROID
+        await Task.Delay(100);
+#else
+        await Task.CompletedTask;
+#endif
+        _itemsLayout.Span = span;
     }
 }
