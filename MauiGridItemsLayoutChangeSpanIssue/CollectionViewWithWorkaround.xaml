@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:MauiGridItemsLayoutChangeSpanIssue;assembly=MauiGridItemsLayoutChangeSpanIssue"
+             xmlns:controls="clr-namespace:MauiGridItemsLayoutChangeSpanIssue.Workaround;assembly=MauiGridItemsLayoutChangeSpanIssue"
+             x:DataType="vm:CollectionViewModel"
+             x:Class="MauiGridItemsLayoutChangeSpanIssue.CollectionViewWithWorkaround">
+
+    <Grid Margin="10" RowSpacing="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <controls:CollectionControl x:Name="_collectionView" ItemsSource="{Binding Items}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <ContentView WidthRequest="120" HeightRequest="120" BackgroundColor="Green"/>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical" Span="2" HorizontalItemSpacing="10" VerticalItemSpacing="10" />
+            </CollectionView.ItemsLayout>
+        </controls:CollectionControl>
+
+    </Grid>
+
+</ContentPage>

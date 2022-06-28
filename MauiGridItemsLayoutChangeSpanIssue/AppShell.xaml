@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MauiGridItemsLayoutChangeSpanIssue.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MauiGridItemsLayoutChangeSpanIssue"
+    Shell.FlyoutBehavior="Flyout">
+
+    <ShellContent
+        Title="CollectionView with iOS workaround"
+        ContentTemplate="{DataTemplate local:CollectionViewWithWorkaround}"
+        Route="CollectionViewWithWorkaround" />
+
+    <ShellContent
+        Title="CollectionView with bug"
+        ContentTemplate="{DataTemplate local:CollectionViewWithBug}"
+        Route="CollectionViewWithBug" />
+
+</Shell>
